@@ -4,7 +4,7 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const glfw_mod = b.addModule("glfw", .{
+    const glfw_mod = b.addModule("zglfw", .{
         .root_source_file = b.path("src/glfw.zig"),
         .target = target,
         .optimize = optimize,
@@ -18,7 +18,7 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
     });
-    exe.root_module.addImport("glfw", glfw_mod);
+    exe.root_module.addImport("zglfw", glfw_mod);
 
     const install_exe = b.addInstallArtifact(exe, .{});
 
