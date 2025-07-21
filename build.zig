@@ -10,7 +10,7 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
         .link_libc = true,
     });
-    glfw_mod.linkSystemLibrary("glfw3", .{});
+    // glfw_mod.linkSystemLibrary("glfw3", .{});
 
     const exe = b.addExecutable(.{
         .name = "sample",
